@@ -37,7 +37,7 @@ public class CameraController : MonoBehaviour
         cam = Camera.main;
 
         newRotation = transform.rotation;
-        rotationAmount = 1;
+        rotationAmount = 0.5f;
     }
     
     // Start is called before the first frame update
@@ -66,7 +66,7 @@ public class CameraController : MonoBehaviour
         Vector3 dlr = (transform.forward * zInput) + (transform.right * xInput);
 
         transform.position += dlr * moveSpeed * Time.deltaTime;
-        transform.position = Clamp(corner1 , corner2);
+        //transform.position = Clamp(corner1 , corner2);
     }
 
     private Vector3 Clamp(Vector3 lowerLeft, Vector3 topRight)
