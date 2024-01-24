@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+public enum UnitState
+{
+    Idle,
+    Move,
+    Attack,
+    Die
+}
+
 public class Unit : MonoBehaviour
 {
-    public enum UnitState
-    {
-        Idle,
-        Move,
-        Attack,
-        Die
-    }
+
+    
 
     [SerializeField] private int id;
-    public int ID {  get { return id; } set { id = value; } }
+    public int ID { get { return id; } set { id = value; } }
 
     [SerializeField] private string unitName;
-    public int UnitName { get { return UnitName; } }
+    public string UnitName { get { return unitName; } }
 
     [SerializeField] private Sprite unitPic;
     public Sprite UnitPic { get { return unitPic; } }
@@ -44,18 +47,23 @@ public class Unit : MonoBehaviour
     public float VisualRange { get { return visualRange; } }
 
     [SerializeField] private float weaponRange;
-    public float WeaponRange { get {  return weaponRange; } }
+    public float WeaponRange { get { return weaponRange; } }
 
     [SerializeField] private UnitState state;
     public UnitState State { get { return state; } set { state = value; } }
 
     private NavMeshAgent navAgent;
-    public NavMeshAgent NavMeshAgent { get { return navAgent; } }
+    public NavMeshAgent NavAgent { get { return navAgent; } }
 
     [SerializeField] private Faction faction;
 
     [SerializeField] private GameObject selectionVisual;
     public GameObject SelectionVisual { get { return selectionVisual; } }
+
+    void Awake()
+    {
+        navAgent = GetComponent<NavMeshAgent>();
+    }
 
 
     // Start is called before the first frame update

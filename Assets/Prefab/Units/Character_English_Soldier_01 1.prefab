@@ -5140,6 +5140,7 @@ GameObject:
   - component: {fileID: -6193116304091658795}
   - component: {fileID: -6018525971718653684}
   - component: {fileID: -2879974480208862585}
+  - component: {fileID: 1904407534565042351}
   m_Layer: 0
   m_Name: Character_English_Soldier_01 1
   m_TagString: Untagged
@@ -5254,6 +5255,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b6413ac8f55df429d2d67a2896b8ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  unitName: 
+  unitPic: {fileID: 0}
+  curHP: 0
+  maxHP: 100
+  moveSpeed: 5
+  minWpnDamage: 0
+  maxWpnDamage: 0
+  armour: 0
+  visualRange: 0
+  weaponRange: 0
+  state: 0
+  faction: {fileID: 0}
+  selectionVisual: {fileID: 0}
+--- !u!114 &1904407534565042351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a24ea658ecd5364494c158a14dfd1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &186630
