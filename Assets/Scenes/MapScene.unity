@@ -1037,8 +1037,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   moveSpeed: 0
-  corner1: {fileID: 0}
-  corner2: {fileID: 0}
+  corner1: {fileID: 751033491}
+  corner2: {fileID: 1633586210}
   xInput: 0
   zInput: 0
   zoomSpeed: 0

@@ -66,7 +66,7 @@ public class CameraController : MonoBehaviour
         Vector3 dlr = (transform.forward * zInput) + (transform.right * xInput);
 
         transform.position += dlr * moveSpeed * Time.deltaTime;
-        //transform.position = Clamp(corner1 , corner2);
+        transform.position = Clamp(corner1.position , corner2.position);
     }
 
     private Vector3 Clamp(Vector3 lowerLeft, Vector3 topRight)
