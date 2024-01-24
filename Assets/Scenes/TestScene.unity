@@ -431,6 +431,7 @@ GameObject:
   - component: {fileID: 413575407}
   - component: {fileID: 413575406}
   - component: {fileID: 413575405}
+  - component: {fileID: 413575409}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -524,6 +525,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &413575409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413575404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9ff218a2343dbc418913fab298dbdcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  units:
+  - {fileID: 1482665346}
 --- !u!1 &890212611
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,7 +621,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 890212614}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 413575409}
+        m_TargetAssemblyTypeName: TestScence, Assembly-CSharp
+        m_MethodName: SetMove
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &890212614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,6 +821,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1482665346 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -2879974480208862585, guid: 36f39b9b74fcdcc448c7d24601fd2227, type: 3}
+  m_PrefabInstance: {fileID: 980417074}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b6413ac8f55df429d2d67a2896b8ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1670744662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,7 +1048,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1814436474}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 413575409}
+        m_TargetAssemblyTypeName: TestScence, Assembly-CSharp
+        m_MethodName: SetIdle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1814436474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1206,7 +1256,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1920972918}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 413575409}
+        m_TargetAssemblyTypeName: TestScence, Assembly-CSharp
+        m_MethodName: SetAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1920972918
 MonoBehaviour:
   m_ObjectHideFlags: 0
