@@ -5142,6 +5142,7 @@ GameObject:
   - component: {fileID: -6018525971718653684}
   - component: {fileID: -2879974480208862585}
   - component: {fileID: 1904407534565042351}
+  - component: {fileID: 4314637666127603871}
   m_Layer: 6
   m_Name: Soilder
   m_TagString: Unit
@@ -5285,6 +5286,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a24ea658ecd5364494c158a14dfd1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4314637666127603871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd929a9c85e4ce488e0df8063f38984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  curUnit: {fileID: 0}
 --- !u!1 &186630
 GameObject:
   m_ObjectHideFlags: 0
