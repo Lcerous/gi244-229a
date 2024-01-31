@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
+//using System.Diagnostics;
 using UnityEngine;
 
 public class UnitSelect : MonoBehaviour
 {
+
     [SerializeField]
     private LayerMask layerMask;
 
@@ -54,7 +55,7 @@ public class UnitSelect : MonoBehaviour
 
         curUnit.ToggleSelectionVisual(true);
 
-        //Debug.Log("Selected Unit");
+        Debug.Log("Selected Unit");
     }
 
 

@@ -750,9 +750,9 @@ GameObject:
   - component: {fileID: 1162216925}
   - component: {fileID: 1162216924}
   - component: {fileID: 1162216923}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GrounPlane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1147,7 +1147,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591792488}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1262,6 +1262,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 74725283}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1642060344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3634689403867779846, guid: 969f3692fc0fc7d49988776280efb7fc, type: 3}
+  m_PrefabInstance: {fileID: 1774109100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1774109100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1317,13 +1322,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3634689403867779846, guid: 969f3692fc0fc7d49988776280efb7fc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1774109103}
   m_SourcePrefab: {fileID: 100100000, guid: 969f3692fc0fc7d49988776280efb7fc, type: 3}
 --- !u!4 &1774109101 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 739242337760291570, guid: 969f3692fc0fc7d49988776280efb7fc, type: 3}
   m_PrefabInstance: {fileID: 1774109100}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1774109103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642060344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4885e27ff43d734e8447c20a6d8c149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &2029881757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,7 +1372,7 @@ Transform:
   m_GameObject: {fileID: 2029881757}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31839782, y: 2.8001678, z: -6.062221}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
