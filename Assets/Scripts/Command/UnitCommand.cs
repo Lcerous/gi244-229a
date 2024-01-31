@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+//using System.Diagnostics;
 using UnityEngine;
 
 public class UnitCommand : MonoBehaviour
@@ -65,9 +66,10 @@ public class UnitCommand : MonoBehaviour
 
     private void CreateVFXMarker(Vector3 pos, GameObject vfxPrefab)
     {
+        Debug.Log("0");
         if (vfxPrefab == null)
             return;
-
+        Debug.Log("1");
         Instantiate(vfxPrefab, new Vector3(pos.x, 0.1f, pos.z), Quaternion.identity);
     }
 
