@@ -47,6 +47,9 @@ public class Faction : MonoBehaviour
 
     public static GameManager instance;
 
+    [SerializeField] private List<Building> aliveBuildings = new List<Building>();
+    public List<Building> AliveBuildings { get { return aliveBuildings; } }
+
 
 
     // Start is called before the first frame update
