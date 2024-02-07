@@ -24,12 +24,12 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        MainUI.instance.UpdateAllResource(myFaction);
     }
 
     // Update is called once per frame
     void Update()
     {
-        MainUI.instance.UpdateAllResource(myFaction);
+        
     }
 }

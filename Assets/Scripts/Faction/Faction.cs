@@ -36,6 +36,18 @@ public class Faction : MonoBehaviour
     [SerializeField] private List<Unit> aliveUnits = new List<Unit>();
     public List<Unit> AliveUnits { get { return aliveUnits; } }
 
+    [SerializeField] private Faction myFaction;
+    public Faction MyFaction { get { return myFaction; } }
+
+    [SerializeField] private Faction enemyFaction;
+    public Faction EnemyFaction { get { return enemyFaction; } }
+
+    //All factions in this game (2 factions for now)
+    [SerializeField] private Faction[] factions;
+
+    public static GameManager instance;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -79,19 +91,12 @@ public class Faction : MonoBehaviour
         return aliveUnits.Contains(u);
     }
 
-    public bool IsMyBuilding(Building b)
+    /*public bool IsMyBuilding(Building b)
     {
         return aliveBuildings.Contains(b);
-    }
+    }*/
 
-    public void UpdateAllResource(Faction faction)
-    {
-        unitCountText.text = faction.AliveUnits.Count.ToString();
-        foodText.text = faction.Food.ToString();
-        woodText.text = faction.Wood.ToString();
-        goldText.text = faction.Gold.ToString();
-        stoneText.text = faction.Stone.ToString();
-    }
+    
 
 
 
