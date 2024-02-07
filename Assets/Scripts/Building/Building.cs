@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
+//using System.Diagnostics;
 using UnityEngine;
 
 public class Building : Structure
@@ -55,9 +55,8 @@ public class Building : Structure
     }
 
 
-}
 
-public void ToCreateUnit(int i)
+    public void ToCreateUnit(int i)
     {
         Debug.Log(structureName + " creates " + i + ":" + unitPrefabs.Length);
         if (unitPrefabs.Length == 0)
@@ -115,6 +114,8 @@ public void ToCreateUnit(int i)
         if (SelectionVisual != null)
             SelectionVisual.SetActive(flag);
     }
-
-
 }
+
+
+
+
