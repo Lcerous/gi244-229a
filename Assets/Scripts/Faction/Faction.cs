@@ -32,7 +32,11 @@ public class Faction : MonoBehaviour
     public int Gold { get { return gold; } set { gold = value; } }
     [SerializeField] private int stone;
     public int Stone { get {  return stone; } set {  stone = value; } }
-    
+
+    [SerializeField] private List<Unit> aliveUnits = new List<Unit>();
+    public List<Unit> AliveUnits { get { return aliveUnits; } }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,4 +48,51 @@ public class Faction : MonoBehaviour
     {
         
     }
+
+    public bool CheckUnitCost(Unit unit)
+    {
+        if (food < unit.UnitCost.food)
+            return false;
+
+        if (wood < unit.UnitCost.wood)
+            return false;
+
+        if (gold < unit.UnitCost.gold)
+            return false;
+
+        if (stone < unit.UnitCost.stone)
+            return false;
+
+        return true;
+    }
+
+    public void DeductUnitCost(Unit unit)
+    {
+        food -= unit.UnitCost.food;
+        wood -= unit.UnitCost.wood;
+        gold -= unit.UnitCost.gold;
+        stone -= unit.UnitCost.stone;
+    }
+
+    public bool IsMyUnit(Unit u)
+    {
+        return aliveUnits.Contains(u);
+    }
+
+    public bool IsMyBuilding(Building b)
+    {
+        return aliveBuildings.Contains(b);
+    }
+
+    public void UpdateAllResource(Faction faction)
+    {
+        unitCountText.text = faction.AliveUnits.Count.ToString();
+        foodText.text = faction.Food.ToString();
+        woodText.text = faction.Wood.ToString();
+        goldText.text = faction.Gold.ToString();
+        stoneText.text = faction.Stone.ToString();
+    }
+
+
+
 }
