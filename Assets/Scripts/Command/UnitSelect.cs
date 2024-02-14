@@ -89,8 +89,8 @@ public class UnitSelect : MonoBehaviour
                 case "Unit":
                     SelectUnit(hit);
                     break;
-                
-                case "Building"
+
+                case "Building":
                     BuildingSelect(hit);
                     break;
             }
