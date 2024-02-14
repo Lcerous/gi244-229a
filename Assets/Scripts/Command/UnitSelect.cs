@@ -18,6 +18,8 @@ public class UnitSelect : MonoBehaviour
 
     public static UnitSelect instance;
 
+   
+
     void Awake()
     {
         faction = GetComponent<Faction>();
@@ -56,6 +58,11 @@ public class UnitSelect : MonoBehaviour
         curUnit.ToggleSelectionVisual(true);
 
         Debug.Log("Selected Unit");
+
+        if (GameManager.instance.MyFaction.IsMyUnit(curUnit)) 
+        {
+            ShowUnit(curUnit);
+        }
     }
 
 
@@ -87,7 +94,17 @@ public class UnitSelect : MonoBehaviour
     {
         ClearAllSelectionVisual();
         curUnit = null;
+
+        //Clear UI
+        InfoManager.instance.ClearAllInfo();
     }
+
+    private void ShowUnit(Unit u)
+    {
+        InfoManager.instance.ShowAllInfo(u);
+    }
+
+
 
 
 

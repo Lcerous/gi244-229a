@@ -56,7 +56,7 @@ public class Building : Structure
         if (Input.GetKeyDown(KeyCode.H))
             ToCreateUnit(1);
 
-        if ((recruitList.Count > 0) && (recruitList[1] != null))
+        /*if ((recruitList.Count > 0) && (recruitList[1] != null))
         {
             unitTimer += Time.deltaTime;
             curUnitWaitTime = recruitList[1].UnitWaitTime;
@@ -73,7 +73,7 @@ public class Building : Structure
                     CreateUnitCompleted();
                 }
             }
-        }
+        }*/
     }
 
 
