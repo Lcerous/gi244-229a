@@ -17,18 +17,6 @@ public class InfoManager : MonoBehaviour
     void Awake()
     {  instance = this; }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void SetPic(Sprite pic)
     {
         unitPic.color = Color.white;
@@ -82,6 +70,15 @@ public class InfoManager : MonoBehaviour
 
         wpRngIcon.color = Color.clear;
         wpRngTxt.text = "";
+    }
+
+    public void ShowAllInfo(Building building)
+    {
+        SetPic(building.StructurePic);
+        nameTxt.text = building.StructureName;
+
+        hpIcon.color = Color.white;
+        hpTxt.text = $"{building.CurHP}/{building.MaxHP}";
     }
 
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 //using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UnitSelect : MonoBehaviour
 {
@@ -40,6 +41,11 @@ public class UnitSelect : MonoBehaviour
         //mouse down
         if (Input.GetMouseButtonDown(0))
         {
+            //if click UI, don't clear
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
             ClearEverything();
         }
 
@@ -104,6 +110,9 @@ public class UnitSelect : MonoBehaviour
         InfoManager.instance.ShowAllInfo(u);
     }
 
+    [SerializeField]
+    private Building curBuilding; //current selected single building
+    public Building CurBuilding { get { return curBuilding; } }
 
 
 
