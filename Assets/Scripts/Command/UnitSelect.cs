@@ -75,6 +75,19 @@ public class UnitSelect : MonoBehaviour
         }
     }
 
+    private void BuildingSelect(RaycastHit hit)
+    {
+        curBuilding = hit.collider.GetComponent<Building>();
+        
+        curBuilding.ToggleSelectionVisual(true);
+
+        if (GameManager.instance.MyFaction.IsMyBuilding(curBuilding))
+        {
+            //Debug.Log("my building");
+            ShowBuilding(curBuilding);//Show building info
+        }
+    }
+
 
     private void TrySelect(Vector2 screenPos)
     {
@@ -126,17 +139,7 @@ public class UnitSelect : MonoBehaviour
         InfoManager.instance.ShowAllInfo(b);
     }
 
-    private void BuildingSelect(RaycastHit hit)
-    {
-        curBuilding = hit.collider.GetComponent<Building>();
-        curBuilding.ToggleSelectionVisual(true);
-
-        if (GameManager.instance.MyFaction.IsMyBuilding(curBuilding))
-        {
-            //Debug.Log("my building");
-            ShowBuilding(curBuilding);//Show building info
-        }
-    }
+    
 
 
 
