@@ -1549,6 +1549,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2879974480208862585, guid: 36f39b9b74fcdcc448c7d24601fd2227, type: 3}
+      propertyPath: unitPic
+      value: 
+      objectReference: {fileID: 21300000, guid: 2ecdf1587c68dde4f91f3efdecc64178, type: 3}
     - target: {fileID: 186328, guid: 36f39b9b74fcdcc448c7d24601fd2227, type: 3}
       propertyPath: m_Name
       value: Soilder
@@ -2607,6 +2611,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -411280396480878563, guid: e264cb2d2d415cf4b802d2c296c61c4e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1175669620307101747, guid: e264cb2d2d415cf4b802d2c296c61c4e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30.81
