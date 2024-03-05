@@ -94,10 +94,10 @@ public class Faction : MonoBehaviour
         return aliveUnits.Contains(u);
     }
 
-    /*public bool IsMyBuilding(Building b)
+    public bool IsMyBuilding(Building b)
     {
         return aliveBuildings.Contains(b);
-    }*/
+    }
 
     
 

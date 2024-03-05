@@ -1,6 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+[System.Serializable]
+public struct StructureCost
+{
+    public int food;
+    public int wood;
+    public int gold;
+    public int stone;
+}
 
 public class Structure : MonoBehaviour
 {

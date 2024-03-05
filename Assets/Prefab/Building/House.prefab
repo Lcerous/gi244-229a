@@ -76,6 +76,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4858789625342647506}
   - component: {fileID: -9020406196415676835}
+  - component: {fileID: 5667974601590558571}
   m_Layer: 7
   m_Name: House
   m_TagString: Building
@@ -126,6 +127,27 @@ MonoBehaviour:
   unitTimer: 0
   curUnitProgress: 0
   curUnitWaitTime: 0
+--- !u!65 &5667974601590558571
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3783596328930999054}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 7, y: 7, z: 8}
+  m_Center: {x: 0, y: 6.39, z: 2}
 --- !u!1001 &46700215686789262
 PrefabInstance:
   m_ObjectHideFlags: 0
