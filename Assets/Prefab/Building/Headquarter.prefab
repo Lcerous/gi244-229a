@@ -184,6 +184,7 @@ MonoBehaviour:
   unitTimer: 0
   curUnitProgress: 0
   curUnitWaitTime: 0
+  isFunctional: 0
 --- !u!65 &-411280396480878563
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -577,6 +578,10 @@ PrefabInstance:
     - target: {fileID: 1793305390530944635, guid: d355a162da644444f982a44fe6f5c78a, type: 3}
       propertyPath: m_Name
       value: BuildingSelection
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793305390530944635, guid: d355a162da644444f982a44fe6f5c78a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

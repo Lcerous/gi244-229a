@@ -10,11 +10,11 @@ public class ActionManager : MonoBehaviour
 
     private CanvasGroup cg;
 
-    public static ActionManager Instance;
+    public static ActionManager instance;
 
     void Awake()
     {  
-        Instance = this; 
+        instance = this; 
         cg = GetComponent<CanvasGroup>();
     }
 
