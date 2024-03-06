@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Builder : MonoBehaviour
 {
@@ -33,10 +34,26 @@ public class Builder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (unit.State == UnitState.Die)
+            return;
+
+        /*if (toBuild) // if this unit is to build something
+        {
+            GhostBuildingFollowsMouse();
+
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1))
+            {
+                if (EventSytem.current.IsPointerOverGameObject())
+                    reture;
+
+                CancelToBuild();
+            }   
+                
+        }*/
+
     }
 
-    public void ToCreateNewBuilding(int i) //Start call from ActionManager UI Btns
+    /*public void ToCreateNewBuilding(int i) //Start call from ActionManager UI Btns
     {
         if (buildingList[i] == null)
             return;
@@ -58,4 +75,132 @@ public class Builder : MonoBehaviour
         }
     }
 
+    private void GhostBuildingFollowsMouse()
+    {
+        if (showGhost)
+        {
+            Ray ray = CameraController.instance.Cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 1000, LayerMask.GetMask("Ground")))
+            {
+                if (ghostBuilding != null)
+                {
+                    ghostBuilding.transform.position = new Vector3(hit.point.x, 0, hit.point.z);
+                }
+            }
+        }
+    }*/
+
+    private void CancelToBuild()
+    {
+        toBuild = false;
+        showGhost = false;
+
+        newBuilding = null;
+        Destroy(ghostBuilding);
+        ghostBuilding = null;
+        //Debug.Log("Cancel Building");
+    }
+
+    public void BuilderStartFixBuilding(GameObject target)
+    {
+        inProgressBuilding = target;
+        unit.SetState(UnitState.MoveToBuild);
+    }
+
+    private void StartConstruction(GameObject buildingObj)
+    {
+        BuilderStartFixBuilding(buildingObj);
+    }
+
+    public void CreateBuildingSite(Vector3 pos) //Set a building site
+    {
+        if (ghostBuilding != null)
+        {
+            Destroy(ghostBuilding);
+            ghostBuilding = null;
+        }
+
+        //We use prefab position.y when instantiating.
+        GameObject buildingObj = Instantiate(newBuilding,
+        new Vector3(pos.x, newBuilding.transform.position.y, pos.z),
+        Quaternion.identity);
+
+        newBuilding = null; //Clear 
+
+        Building building = buildingObj.GetComponent<Building>();
+
+        //Set building to be underground
+        buildingObj.transform.position = new Vector3(buildingObj.transform.position.x,
+        buildingObj.transform.position.y - building.IntoTheGround,
+        buildingObj.transform.position.z);
+
+        //Set building's parent game object
+        buildingObj.transform.parent = unit.Faction.BuildingsParent.transform;
+
+        inProgressBuilding = buildingObj; //set a new clone building object to be a building in Unit's mind
+        unit.Faction.AliveBuildings.Add(building);
+
+        building.Faction = unit.Faction; //set a building's faction to be belong to this player
+        building.IsFunctional = false;
+        building.CurHP = 1;
+
+        //unit.Faction.DeductBuildingCost(building);
+
+        toBuild = false; //Disable flag at the builder
+        showGhost = false; //Disable to show ghost building
+
+        if (unit.Faction == GameManager.instance.MyFaction)
+        {
+            MainUI.instance.UpdateAllResource(unit.Faction);
+        }
+        //Debug.Log("Building site created.");
+
+        //order builders to build together
+        StartConstruction(inProgressBuilding);
+
+    }
+
+    private void CheckClickOnGround()
+    {
+        Ray ray = CameraController.instance.Cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            bool canBuild = ghostBuilding.GetComponent<FindBuildingSite>().CanBuild;
+            //Debug.Log(hit.collider.tag);
+            if ((hit.collider.tag == "Ground") && canBuild)
+            {
+                //Debug.Log("Click Ground to Build");
+                CreateBuildingSite(hit.point); //Create building site with 1 HP
+            }
+        }
+    }
+
+    private void MoveToBuild(GameObject b)
+    {
+        if (b == null)
+            return;
+
+        unit.NavAgent.SetDestination(b.transform.position);
+        unit.NavAgent.isStopped = false;
+    }
+
+    public void LookAt(Vector3 pos)
+    {
+        Vector3 dir = (pos - transform.position).normalized;
+        float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0f, angle, 0f);
+    }
+
+
 }
+
+
+
+
+
+
