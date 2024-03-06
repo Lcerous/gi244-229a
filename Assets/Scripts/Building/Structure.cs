@@ -10,7 +10,7 @@ public struct StructureCost
     public int stone;
 }
 
-public class Structure : MonoBehaviour
+public abstract class Structure : MonoBehaviour
 {
     [SerializeField]
     protected string structureName;
@@ -29,13 +29,18 @@ public class Structure : MonoBehaviour
 
     [SerializeField]
     protected Faction faction;
+    public Faction Faction { get { return faction; } set { faction = value; } }
 
     [SerializeField]
     protected GameObject selectionVisual;
     public GameObject SelectionVisual { get { return selectionVisual; } }
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    protected GameObject structureCost;
+    public GameObject StructureCost { get { return StructureCost; } set { structureCost = value; } }
+
+// Start is called before the first frame update
+void Start()
     {
         
     }

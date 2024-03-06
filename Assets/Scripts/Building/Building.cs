@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 //using System.Diagnostics;
 using UnityEngine;
+
 
 public class Building : Structure
 {
@@ -24,19 +26,25 @@ public class Building : Structure
     [SerializeField] private bool isFunctional;
     public bool IsFunctional { get { return isFunctional; } set { isFunctional = value; } }
 
+    [SerializeField] private bool isHQ;
+    public bool IsHQ { get {  return isHQ; } }
+
+    [SerializeField] private float intoTheGround = 5f;
+    public float IntoTheGround { get { return intoTheGround; } }
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        curHP = maxHP;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         /*if (Input.GetKeyDown(KeyCode.G))
-            ToCreateUnit(0);
+            ToCreateUnit(0);*/
 
         if ((recruitList.Count > 0) && (recruitList[0] != null))
         {
@@ -57,7 +65,7 @@ public class Building : Structure
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.H))
+        /*if (Input.GetKeyDown(KeyCode.H))
             ToCreateUnit(1);*/
 
         /*if ((recruitList.Count > 0) && (recruitList[1] != null))
