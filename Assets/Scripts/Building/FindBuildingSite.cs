@@ -22,7 +22,7 @@ public class FindBuildingSite : MonoBehaviour
             modelRdr[i].material.color = Color.green;
 
         //Setup Plane Color
-        planeRdr.material.color = Color.green;
+        planeRdr.material.color = new Color32(0, 255, 0, 50);
 
         CanBuild = true;
 
