@@ -20,7 +20,7 @@ public class ActionManager : MonoBehaviour
 
     private void HideCreateUnitButtons()
     {
-        for (int i = 0; i < unitBtns.Length; i++)
+        for (int i = 0; i < unitBtns.Length; i++) 
             unitBtns[i].gameObject.SetActive(false);
     }
 

@@ -35,7 +35,7 @@ public class Building : Structure
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))
+        /*if (Input.GetKeyDown(KeyCode.G))
             ToCreateUnit(0);
 
         if ((recruitList.Count > 0) && (recruitList[0] != null))
@@ -58,7 +58,7 @@ public class Building : Structure
         }
 
         if (Input.GetKeyDown(KeyCode.H))
-            ToCreateUnit(1);
+            ToCreateUnit(1);*/
 
         /*if ((recruitList.Count > 0) && (recruitList[1] != null))
         {
