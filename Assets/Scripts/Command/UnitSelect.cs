@@ -3,6 +3,7 @@ using System.Collections.Generic;
 //using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static UnityEditor.ObjectChangeEventStream;
 
 public class UnitSelect : MonoBehaviour
 {
@@ -18,8 +19,14 @@ public class UnitSelect : MonoBehaviour
     private Building curBuilding; //current selected single building
     public Building CurBuilding { get { return curBuilding; } }
 
+    [SerializeField]
+    private bool isBuilder; 
+    public bool IsBuilder { get { return curBuilding; } }
+
     private Camera cam;
     private Faction faction;
+
+    private Builder builder;
 
     public static UnitSelect instance;
 
@@ -28,6 +35,9 @@ public class UnitSelect : MonoBehaviour
     void Awake()
     {
         faction = GetComponent<Faction>();
+
+        if (IsBuilder)
+            builder = GetComponent<Builder>();
     }
 
     // Start is called before the first frame update
