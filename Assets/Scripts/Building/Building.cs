@@ -93,7 +93,7 @@ public class Building : Structure
             }
         }*/
 
-        switch (unitPrefabs.ToString()) 
+        /*switch (unitPrefabs.ToString()) 
         {
             case UnitState.MoveToBuild:
                 MoveToBuild(inProguessBuilding);
@@ -102,7 +102,7 @@ public class Building : Structure
             case UnitState.BuildProguess:
                 BuildingProguess();
                 break;
-        }
+        }*/
     }
 
 
@@ -167,7 +167,7 @@ public class Building : Structure
             SelectionVisual.SetActive(flag);
     }
 
-    private void BuildProgress()
+    /*private void BuildProgress()
     {
         if (inProgressBuilding == null)
             return;
@@ -203,9 +203,9 @@ public class Building : Structure
                 unit.SetState(UnitState.Idle);
             }
         }
-    }
+    }*/
 
-    private void OnTriggerStay(Collider other)
+    /*private void OnTriggerStay(Collider other)
     {
         if (unit.State == UnitState.Die)
             return;
@@ -218,13 +218,13 @@ public class Building : Structure
                 unit.SetState(UnitState.BuildProgress);
             }
         }
-    }
+    }*/
 
-    private void OnDestroy()
+    /*private void OnDestroy()
     {
         if (ghostBuilding != null)
             Destroy(ghostBuilding);
-    }
+    }*/
 
 
 
