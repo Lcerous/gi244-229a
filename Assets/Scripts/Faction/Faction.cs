@@ -31,6 +31,7 @@ public class Faction : MonoBehaviour
     public Transform GhostBuildingParent { get { return ghostBuildingParent; } }
 
 
+
     public Nation GetNation()
     { return nation; }
 

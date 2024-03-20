@@ -49,8 +49,8 @@ public class Building : Structure
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.G))
-            ToCreateUnit(0);*/
+        if (Input.GetKeyDown(KeyCode.G))
+            ToCreateUnit(0);
 
         if ((recruitList.Count > 0) && (recruitList[0] != null))
         {
@@ -71,10 +71,10 @@ public class Building : Structure
             }
         }
 
-        /*if (Input.GetKeyDown(KeyCode.H))
-            ToCreateUnit(1);*/
+        if (Input.GetKeyDown(KeyCode.H))
+            ToCreateUnit(1);
 
-        /*if ((recruitList.Count > 0) && (recruitList[1] != null))
+        if ((recruitList.Count > 0) && (recruitList[1] != null))
         {
             unitTimer += Time.deltaTime;
             curUnitWaitTime = recruitList[1].UnitWaitTime;
@@ -91,7 +91,7 @@ public class Building : Structure
                     CreateUnitCompleted();
                 }
             }
-        }*/
+        }
 
         /*switch (unitPrefabs.ToString()) 
         {
@@ -169,7 +169,7 @@ public class Building : Structure
 
     /*private void BuildProgress()
     {
-        if (inProgressBuilding == null)
+        /*if (inProgressBuilding == null)
             return;
 
         unit.LookAt(inProgressBuilding.transform.position);
@@ -202,8 +202,12 @@ public class Building : Structure
                 inProgressBuilding = null; //Clear this job off his mind
                 unit.SetState(UnitState.Idle);
             }
+
         }
     }*/
+
+        
+    
 
     /*private void OnTriggerStay(Collider other)
     {

@@ -12,6 +12,8 @@ public struct StructureCost
 
 public abstract class Structure : MonoBehaviour
 {
+    public int food;
+
     [SerializeField]
     protected string structureName;
     public string StructureName { get { return structureName; } }
