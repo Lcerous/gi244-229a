@@ -25,8 +25,6 @@ public struct UnitCost
 public class Unit : MonoBehaviour
 {
 
-    
-
     [SerializeField] private int id;
     public int ID { get { return id; } set { id = value; } }
 

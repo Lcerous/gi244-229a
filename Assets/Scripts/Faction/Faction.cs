@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+
 //using System.Runtime.Remoting.Messaging;
 using UnityEngine;
 
@@ -111,32 +113,33 @@ public class Faction : MonoBehaviour
         return aliveBuildings.Contains(b);
     }
 
-    //temp Change Building to Sturcture for making it work
-
-    /*public bool CheckBuildingCost(Building Structure)
+    public bool CheckBuildingCost(Building building)
     {
-        if (food < Structure.StructureCost.food)
+        if (food < building.StructureCost.food)
             return false;
 
-        if (wood < Structure.StructureCost.wood)
+        if (wood < building.StructureCost.wood)
             return false;
 
-        if (gold < Structure.StructureCost.gold)
+        if (gold < building.StructureCost.gold)
             return false;
 
-        if (stone < Structure.StructureCost.stone)
+        if (stone < building.StructureCost.stone)
             return false;
 
         return true;
-    }*/
+    }
 
-    /*public void DeductBuildingCost(Building Structure)
+
+
+    public void DeductBuildingCost(Building building)
     {
-        food -= Structure.StructureCost.food;
-        wood -= Structure.StructureCost.wood;
-        gold -= Structure.StructureCost.gold;
-        stone -= Structure.StructureCost.stone;
-    }*/
+        food -= building.StructureCost.food;
+        wood -= building.StructureCost.wood;
+        gold -= building.StructureCost.gold;
+        stone -= building.StructureCost.stone;
+    }
+
 
 
 

@@ -49,8 +49,6 @@ public class Building : Structure
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))
-            ToCreateUnit(0);
 
         if ((recruitList.Count > 0) && (recruitList[0] != null))
         {
@@ -71,27 +69,7 @@ public class Building : Structure
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.H))
-            ToCreateUnit(1);
-
-        if ((recruitList.Count > 0) && (recruitList[1] != null))
-        {
-            unitTimer += Time.deltaTime;
-            curUnitWaitTime = recruitList[1].UnitWaitTime;
-
-            if (unitTimer >= curUnitWaitTime)
-            {
-                curUnitProgress++;
-                unitTimer = 0f;
-
-                if (curUnitProgress >= 100)
-                {
-                    curUnitProgress = 0;
-                    curUnitWaitTime = 0f;
-                    CreateUnitCompleted();
-                }
-            }
-        }
+        
 
         /*switch (unitPrefabs.ToString()) 
         {
@@ -149,7 +127,7 @@ public class Building : Structure
         recruitList.RemoveAt(0);
 
         Unit unit = unitObj.GetComponent<Unit>();
-        //unit.faction;
+        unit.Faction = faction;
         unit.MoveToPosition(rallyPoint.position); //Go to Rally Point
 
         //Add unit into faction's Army

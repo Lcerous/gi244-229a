@@ -38,11 +38,11 @@ public abstract class Structure : MonoBehaviour
     public GameObject SelectionVisual { get { return selectionVisual; } }
 
     [SerializeField]
-    private GameObject structureCost;
-    public GameObject StructureCost { get { return StructureCost; } set { structureCost = value; } }
+    private StructureCost structureCost;
+    public StructureCost StructureCost { get { return structureCost; } set { structureCost = value; } }
 
-// Start is called before the first frame update
-void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         
     }

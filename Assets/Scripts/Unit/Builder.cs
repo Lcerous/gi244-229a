@@ -37,23 +37,28 @@ public class Builder : MonoBehaviour
         if (unit.State == UnitState.Die)
             return;
 
-        /*if (toBuild) // if this unit is to build something
+        if (toBuild) // if this unit is to build something
         {
             GhostBuildingFollowsMouse();
 
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(0))
             {
-                if (EventSytem.current.IsPointerOverGameObject())
-                    reture;
+                if (EventSystem.current.IsPointerOverGameObject())
+                    return;
 
-                CancelToBuild();
-            }   
-                
-        }*/
+                CheckClickOnGround();
+            }
+            
+
+        }
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1))
+        {
+            CancelToBuild();
+        }
 
     }
 
-    /*public void ToCreateNewBuilding(int i) //Start call from ActionManager UI Btns
+    public void ToCreateNewBuilding(int i) //Start call from ActionManager UI Btns
     {
         if (buildingList[i] == null)
             return;
@@ -86,11 +91,11 @@ public class Builder : MonoBehaviour
             {
                 if (ghostBuilding != null)
                 {
-                    ghostBuilding.transform.position = new Vector3(hit.point.x, 0, hit.point.z);
+                    ghostBuilding.transform.position = new Vector3(hit.point.x, -3.7f , hit.point.z);
                 }
             }
         }
-    }*/
+    }
 
     private void CancelToBuild()
     {
@@ -124,8 +129,7 @@ public class Builder : MonoBehaviour
 
         //We use prefab position.y when instantiating.
         GameObject buildingObj = Instantiate(newBuilding,
-        new Vector3(pos.x, newBuilding.transform.position.y, pos.z),
-        Quaternion.identity);
+        new Vector3(pos.x, newBuilding.transform.position.y, pos.z),Quaternion.identity);
 
         newBuilding = null; //Clear 
 
@@ -146,7 +150,7 @@ public class Builder : MonoBehaviour
         building.IsFunctional = false;
         building.CurHP = 1;
 
-        //unit.Faction.DeductBuildingCost(building);
+        unit.Faction.DeductBuildingCost(building);
 
         toBuild = false; //Disable flag at the builder
         showGhost = false; //Disable to show ghost building
