@@ -62,7 +62,7 @@ public class UnitCommand : MonoBehaviour
                     break;
 
                 case "Resource":
-                    CommandToGround(hit, unitSelect.CurUnit);
+                    ResourceCommand(hit, unitSelect.CurUnit);
                     break;
             }
         }
