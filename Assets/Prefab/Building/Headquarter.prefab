@@ -178,10 +178,10 @@ MonoBehaviour:
   faction: {fileID: 0}
   selectionVisual: {fileID: 4458508098408021501}
   structureCost:
-    food: 250
-    wood: 400
-    gold: 600
-    stone: 420
+    food: 100
+    wood: 100
+    gold: 100
+    stone: 100
   spawnPoint: {fileID: 8144563978930827175}
   rallyPoint: {fileID: 4233119333280872543}
   unitPrefabs:
@@ -190,8 +190,8 @@ MonoBehaviour:
   unitTimer: 0
   curUnitProgress: 0
   curUnitWaitTime: 0
-  isFunctional: 1
-  isHQ: 1
+  isFunctional: 0
+  isHQ: 0
   intoTheGround: 5
 --- !u!65 &-411280396480878563
 BoxCollider:
@@ -212,7 +212,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 16.685608, y: 10, z: 16.673544}
+  m_Size: {x: 18.68561, y: 10, z: 18.67354}
   m_Center: {x: -0.34215355, y: 8, z: 8.498652}
 --- !u!54 &-1881160786126106815
 Rigidbody:
@@ -589,7 +589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1793305390530944635, guid: d355a162da644444f982a44fe6f5c78a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

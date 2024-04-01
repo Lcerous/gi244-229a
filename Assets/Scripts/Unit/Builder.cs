@@ -56,6 +56,19 @@ public class Builder : MonoBehaviour
             CancelToBuild();
         }
 
+        switch (unit.State)
+        {
+            case UnitState.MoveToBuild:
+                MoveToBuild(inProgressBuilding);
+                break;
+
+            case UnitState.BuildProgress:
+                BuildProgress();
+                break;
+        }
+
+        
+
     }
 
     public void ToCreateNewBuilding(int i) //Start call from ActionManager UI Btns
@@ -192,13 +205,66 @@ public class Builder : MonoBehaviour
         unit.NavAgent.isStopped = false;
     }
 
-    public void LookAt(Vector3 pos)
+    private void BuildProgress()
     {
-        Vector3 dir = (pos - transform.position).normalized;
-        float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
+        if (inProgressBuilding == null)
+            return;
 
-        transform.rotation = Quaternion.Euler(0f, angle, 0f);
+        unit.LookAt(inProgressBuilding.transform.position);
+        Building b = inProgressBuilding.GetComponent<Building>();
+
+        //building is already finished
+        if ((b.CurHP >= b.MaxHP) && b.IsFunctional)
+        {
+            inProgressBuilding = null; //Clear this job off his mind
+            unit.SetState(UnitState.Idle);
+            return;
+        }
+        //constructing
+        b.Timer += Time.deltaTime;
+
+        if (b.Timer >= b.WaitTime)
+        {
+            b.Timer = 0;
+            b.CurHP++;
+
+            if (b.IsFunctional == false) //if this building is being built, not being fixed
+                //Raise up building from the ground
+                inProgressBuilding.transform.position += new Vector3(0f, b.IntoTheGround / (b.MaxHP - 1), 0f);
+
+            if (b.CurHP >= b.MaxHP) //finish
+            {
+                b.CurHP = b.MaxHP;
+                b.IsFunctional = true;
+
+                inProgressBuilding = null; //Clear this job off his mind
+                unit.SetState(UnitState.Idle);
+            }
+        }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (unit.State == UnitState.Die)
+            return;
+
+        if (unit != null)
+        {
+            if (other.gameObject == inProgressBuilding)
+            {
+                unit.NavAgent.isStopped = true;
+                unit.SetState(UnitState.BuildProgress);
+            }
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (ghostBuilding != null)
+            Destroy(ghostBuilding);
+    }
+
+
 
 
 }
