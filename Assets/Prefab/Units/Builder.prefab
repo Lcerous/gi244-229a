@@ -5143,6 +5143,7 @@ GameObject:
   - component: {fileID: 1904407534565042351}
   - component: {fileID: 4314637666127603871}
   - component: {fileID: 2029426154612821761}
+  - component: {fileID: 8268587555517875979}
   m_Layer: 6
   m_Name: Builder
   m_TagString: Unit
@@ -5282,6 +5283,10 @@ MonoBehaviour:
   unitWaitTime: 0.1
   isBuilder: 1
   builder: {fileID: 0}
+  isWorker: 1
+  worker: {fileID: 0}
+  pathUpdateRate: 1
+  lastPathUpdateTime: 0
 --- !u!114 &1904407534565042351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5335,6 +5340,24 @@ MonoBehaviour:
   newBuilding: {fileID: 0}
   ghostBuilding: {fileID: 0}
   inProgressBuilding: {fileID: 0}
+--- !u!114 &8268587555517875979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7610079b23b384b8624a7715f3ca36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curResourceSource: {fileID: 0}
+  gatherRate: 0.5
+  gatherAmount: 1
+  amountCarry: 0
+  maxCarry: 25
+  carryType: 0
 --- !u!1 &186630
 GameObject:
   m_ObjectHideFlags: 0

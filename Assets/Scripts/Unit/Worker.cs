@@ -48,6 +48,14 @@ public class Worker : MonoBehaviour
             case UnitState.Gather:
                 GatherUpdate();
                 break;
+
+            case UnitState.DeliverToHQ:
+                DeliverToHQUpdate();
+                break;
+
+            case UnitState.StoreAtHQ: 
+                StoreAtHQUpdate();
+                break;
         }
     }
 
@@ -100,6 +108,34 @@ public class Worker : MonoBehaviour
             }
             else //amount is full, go back to deliver at HQ
                 unit.SetState(UnitState.DeliverToHQ);
+        }
+    }
+
+    private void DeliverToHQUpdate()
+    {
+        if (Time.time - unit.LastPathUpdateTime > unit.PathUpdateRate)
+        {
+            unit.LastPathUpdateTime = Time.time;
+
+            unit.NavAgent.SetDestination(unit.Faction.GetHQSpawnPos());
+            unit.NavAgent.isStopped = false;
+        }
+
+        if (Vector3.Distance(transform.position, unit.Faction.GetHQSpawnPos()) <= 1f)
+            unit.SetState(UnitState.StoreAtHQ);
+    }
+
+    private void StoreAtHQUpdate()
+    {
+        unit.LookAt(unit.Faction.GetHQSpawnPos());
+
+        if (amountCarry > 0)
+        {
+            // Deliver the resource to Faction
+            unit.Faction.GainResource(carryType, amountCarry);
+            amountCarry = 0;
+
+            //Debug.Log("Delivered");
         }
     }
 
