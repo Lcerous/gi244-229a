@@ -14,17 +14,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Faction[] factions;
 
     public static GameManager instance;
-
+    
     void Awake()
     {
         instance = this;
     }
 
-
     // Start is called before the first frame update
     void Start()
     {
-        MainUI.instance.UpdateAllResource(myFaction);
+        MainUi.instance.UpdateAllResource(myFaction);
     }
 
     // Update is called once per frame

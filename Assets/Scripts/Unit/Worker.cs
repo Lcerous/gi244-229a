@@ -28,8 +28,6 @@ public class Worker : MonoBehaviour
 
     private float lastGatherTime;
     private Unit unit;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -42,24 +40,19 @@ public class Worker : MonoBehaviour
         switch (unit.State)
         {
             case UnitState.MoveToResource:
-                MoveToResourceUpdate(); 
+                MoveToResourceUpdate();
                 break;
-
             case UnitState.Gather:
                 GatherUpdate();
                 break;
-
             case UnitState.DeliverToHQ:
                 DeliverToHQUpdate();
                 break;
-
-            case UnitState.StoreAtHQ: 
+            case UnitState.StoreAtHQ:
                 StoreAtHQUpdate();
                 break;
         }
     }
-
-    // move to a resource and begin to gather it
     public void ToGatherResource(ResourceSource resource, Vector3 pos)
     {
         curResourceSource = resource;
@@ -76,11 +69,9 @@ public class Worker : MonoBehaviour
         unit.NavAgent.isStopped = false;
         unit.NavAgent.SetDestination(pos);
     }
-
     private void MoveToResourceUpdate()
     {
         CheckForResource();
-
         if (Vector3.Distance(transform.position, unit.NavAgent.destination) <= 2f)
         {
             if (curResourceSource != null)
@@ -91,7 +82,6 @@ public class Worker : MonoBehaviour
             }
         }
     }
-
     private void GatherUpdate()
     {
         if (Time.time - lastGatherTime > gatherRate)
@@ -106,14 +96,14 @@ public class Worker : MonoBehaviour
 
                     carryType = curResourceSource.RsrcType;
                     amountCarry += gatherAmount;
-                }else
+                }
+                else
                     CheckForResource();
             }
             else //amount is full, go back to deliver at HQ
                 unit.SetState(UnitState.DeliverToHQ);
         }
     }
-
     private void DeliverToHQUpdate()
     {
         if (Time.time - unit.LastPathUpdateTime > unit.PathUpdateRate)
@@ -127,7 +117,6 @@ public class Worker : MonoBehaviour
         if (Vector3.Distance(transform.position, unit.Faction.GetHQSpawnPos()) <= 1f)
             unit.SetState(UnitState.StoreAtHQ);
     }
-
     private void StoreAtHQUpdate()
     {
         unit.LookAt(unit.Faction.GetHQSpawnPos());
@@ -138,12 +127,10 @@ public class Worker : MonoBehaviour
             unit.Faction.GainResource(carryType, amountCarry);
             amountCarry = 0;
 
-            //Debug.Log("Delivered");
+            Debug.Log("Delivered");
         }
-
         CheckForResource();
     }
-
     private void CheckForResource()
     {
         if (curResourceSource != null) //that resource still exists
@@ -155,13 +142,12 @@ public class Worker : MonoBehaviour
 
             //CheckAgain, if found a new one, go to it
             if (curResourceSource != null)
-                ToGatherResource(curResourceSource, curResourceSource.transform.position);
+                ToGatherResource(curResourceSource, curResourceSource.transform.position); 
             else //can't find a new one
             {
                 Debug.Log($"{unit.name} can't find a new tree");
                 unit.SetState(UnitState.Idle);
             }
         }
-    }
-
+    }   
 }

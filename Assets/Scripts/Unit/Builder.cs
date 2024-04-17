@@ -10,7 +10,6 @@ public class Builder : MonoBehaviour
 
     [SerializeField] private GameObject[] buildingList; // Buildings that this unit can build
     public GameObject[] BuildingList { get { return buildingList; } }
-
     [SerializeField] private GameObject[] ghostBuildingList; // Transparent buildings according to building list
 
     [SerializeField] private GameObject newBuilding; // Current building to build
@@ -20,17 +19,14 @@ public class Builder : MonoBehaviour
     public GameObject GhostBuilding { get { return ghostBuilding; } set { ghostBuilding = value; } }
 
     [SerializeField] private GameObject inProgressBuilding; // The building a unit is currently building
-
     public GameObject InProgressBuilding { get { return inProgressBuilding; } set { inProgressBuilding = value; } }
 
     private Unit unit;
-
     // Start is called before the first frame update
     void Start()
     {
         unit = GetComponent<Unit>();
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -40,20 +36,15 @@ public class Builder : MonoBehaviour
         if (toBuild) // if this unit is to build something
         {
             GhostBuildingFollowsMouse();
-
             if (Input.GetMouseButtonDown(0))
             {
                 if (EventSystem.current.IsPointerOverGameObject())
                     return;
-
+                
                 CheckClickOnGround();
             }
-            
-
-        }
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1))
-        {
-            CancelToBuild();
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1))
+                CancelToBuild();
         }
 
         switch (unit.State)
@@ -61,38 +52,33 @@ public class Builder : MonoBehaviour
             case UnitState.MoveToBuild:
                 MoveToBuild(inProgressBuilding);
                 break;
-
             case UnitState.BuildProgress:
                 BuildProgress();
                 break;
         }
-
-        
-
     }
-
-    public void ToCreateNewBuilding(int i) //Start call from ActionManager UI Btns
+        public void ToCreateNewBuilding(int i) //Start call from ActionManager UI Btns
     {
         if (buildingList[i] == null)
             return;
 
         Building b = buildingList[i].GetComponent<Building>();
 
-        if (!unit.Faction.CheckBuildingCost(b)) //don't have enough resource to build
+        //don't have enough resource to build
+        if (!unit.Faction.CheckBuildingCost(b))
             return;
         else
         {
             //Create ghost building at the mouse position
             ghostBuilding = Instantiate(ghostBuildingList[i],
-                                        Input.mousePosition,
-                                        Quaternion.identity, unit.Faction.GhostBuildingParent);
+                Input.mousePosition,
+                Quaternion.identity, unit.Faction.GhostBuildingParent);
 
             toBuild = true;
             newBuilding = buildingList[i]; //Set prefab into new building
             showGhost = true;
         }
     }
-
     private void GhostBuildingFollowsMouse()
     {
         if (showGhost)
@@ -104,12 +90,11 @@ public class Builder : MonoBehaviour
             {
                 if (ghostBuilding != null)
                 {
-                    ghostBuilding.transform.position = new Vector3(hit.point.x, -3.7f , hit.point.z);
+                    ghostBuilding.transform.position = new Vector3(hit.point.x, 0, hit.point.z);
                 }
             }
         }
     }
-
     private void CancelToBuild()
     {
         toBuild = false;
@@ -120,18 +105,15 @@ public class Builder : MonoBehaviour
         ghostBuilding = null;
         //Debug.Log("Cancel Building");
     }
-
     public void BuilderStartFixBuilding(GameObject target)
     {
-        inProgressBuilding = target;
+        inProgressBuilding = target;        
         unit.SetState(UnitState.MoveToBuild);
     }
-
     private void StartConstruction(GameObject buildingObj)
     {
         BuilderStartFixBuilding(buildingObj);
     }
-
     public void CreateBuildingSite(Vector3 pos) //Set a building site
     {
         if (ghostBuilding != null)
@@ -142,7 +124,8 @@ public class Builder : MonoBehaviour
 
         //We use prefab position.y when instantiating.
         GameObject buildingObj = Instantiate(newBuilding,
-        new Vector3(pos.x, newBuilding.transform.position.y, pos.z),Quaternion.identity);
+            new Vector3(pos.x, newBuilding.transform.position.y, pos.z),
+            Quaternion.identity);
 
         newBuilding = null; //Clear 
 
@@ -150,9 +133,8 @@ public class Builder : MonoBehaviour
 
         //Set building to be underground
         buildingObj.transform.position = new Vector3(buildingObj.transform.position.x,
-        buildingObj.transform.position.y - building.IntoTheGround,
-        buildingObj.transform.position.z);
-
+            buildingObj.transform.position.y - building.IntoTheGround, buildingObj.transform.position.z);
+        
         //Set building's parent game object
         buildingObj.transform.parent = unit.Faction.BuildingsParent.transform;
 
@@ -170,15 +152,13 @@ public class Builder : MonoBehaviour
 
         if (unit.Faction == GameManager.instance.MyFaction)
         {
-            MainUI.instance.UpdateAllResource(unit.Faction);
+            MainUi.instance.UpdateAllResource(unit.Faction);
         }
         //Debug.Log("Building site created.");
 
         //order builders to build together
         StartConstruction(inProgressBuilding);
-
     }
-
     private void CheckClickOnGround()
     {
         Ray ray = CameraController.instance.Cam.ScreenPointToRay(Input.mousePosition);
@@ -195,7 +175,6 @@ public class Builder : MonoBehaviour
             }
         }
     }
-
     private void MoveToBuild(GameObject b)
     {
         if (b == null)
@@ -204,7 +183,6 @@ public class Builder : MonoBehaviour
         unit.NavAgent.SetDestination(b.transform.position);
         unit.NavAgent.isStopped = false;
     }
-
     private void BuildProgress()
     {
         if (inProgressBuilding == null)
@@ -222,7 +200,7 @@ public class Builder : MonoBehaviour
         }
         //constructing
         b.Timer += Time.deltaTime;
-
+        
         if (b.Timer >= b.WaitTime)
         {
             b.Timer = 0;
@@ -239,10 +217,11 @@ public class Builder : MonoBehaviour
 
                 inProgressBuilding = null; //Clear this job off his mind
                 unit.SetState(UnitState.Idle);
+                
+                unit.Faction.UpdateHousingLimit();
             }
         }
     }
-
     private void OnTriggerStay(Collider other)
     {
         if (unit.State == UnitState.Die)
@@ -257,20 +236,10 @@ public class Builder : MonoBehaviour
             }
         }
     }
-
     private void OnDestroy()
     {
         if (ghostBuilding != null)
             Destroy(ghostBuilding);
     }
-
-
-
-
 }
-
-
-
-
-
 

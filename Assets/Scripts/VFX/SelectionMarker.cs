@@ -5,7 +5,6 @@ using UnityEngine;
 public class SelectionMarker : MonoBehaviour
 {
     [SerializeField] private float lifetime = 1f;
-    // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, lifetime);
