@@ -38,7 +38,7 @@ public class AICreateHouse : AICreateHQ
         if (support.Faction.UnitLimit >= 100) //if unit limit >= 100, stop building a house
             return 0;
 
-        if (support.Houses.Count == 0 && support.Faction.AliveUnits.Count >= 6) //There is no house at all and there are 6 units
+        if (support.Houses.Count == 0 && support.Faction.AliveUnits.Count >= 5) //There is no house at all and there are 5 units
             return 1;
 
         if (CheckIfAnyUnfinishedHouse()) //Check if there is any unfinished house

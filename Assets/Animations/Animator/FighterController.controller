@@ -225,7 +225,7 @@ AnimatorStateTransition:
     m_ConditionEvent: isBuilding
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: isIdle
+    m_ConditionEvent: isDie
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 858187385281177109}
@@ -345,7 +345,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 438abd2e5873433438a927286ec50761, type: 3}
+  m_Motion: {fileID: 7400000, guid: 7b59489508ad8f84f8afd5725ff4fc5b, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

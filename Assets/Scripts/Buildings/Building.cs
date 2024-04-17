@@ -120,6 +120,7 @@ public class Building : Structure
         if (SelectionVisual != null)
             SelectionVisual.SetActive(flag);
     }
+
     public int CheckNumInRecruitList(int id)
     {
         int num = 0;
