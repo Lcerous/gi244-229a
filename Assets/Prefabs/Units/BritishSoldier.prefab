@@ -5262,7 +5262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   unitName: Brit. Regular
-  unitPic: {fileID: 21300000, guid: cddd0f264e000a34eb45934ba3e9b2ce, type: 3}
+  unitPic: {fileID: 21300000, guid: 75bd0a7b4c32b4447a30f9e31d89b99f, type: 3}
   curHP: 100
   maxHP: 100
   moveSpeed: 5

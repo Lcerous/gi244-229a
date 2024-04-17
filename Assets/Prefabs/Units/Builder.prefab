@@ -279,7 +279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &485206
 Transform:
   m_ObjectHideFlags: 0
@@ -315,7 +315,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f81a978cf85038f41a62cf0aad8c2981, type: 2}
+  - {fileID: 2100000, guid: 0b4aaac00d4747e409de6522be78c34f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4029,7 +4029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   unitName: Builder
-  unitPic: {fileID: 21300000, guid: f5b4122677d799e47b930f96a932efb8, type: 3}
+  unitPic: {fileID: 21300000, guid: 77bddb365bc6ab54fbbe4adb222735ed, type: 3}
   curHP: 100
   maxHP: 100
   moveSpeed: 5
@@ -6042,7 +6042,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &493264
 Transform:
   m_ObjectHideFlags: 0
