@@ -56,10 +56,10 @@ MonoBehaviour:
   faction: {fileID: 0}
   selectionVisual: {fileID: 3074404380149411509}
   structureCost:
-    food: 0
-    wood: 0
-    gold: 0
-    stone: 0
+    food: 50
+    wood: 100
+    gold: 200
+    stone: 200
   spawnPoint: {fileID: 0}
   rallyPoint: {fileID: 0}
   unitPrefabs: []
@@ -67,10 +67,11 @@ MonoBehaviour:
   unitTimer: 0
   curUnitProgress: 0
   curUnitWaitTime: 0
-  isFunctional: 1
+  isFunctional: 0
   isHQ: 0
   isHousing: 0
   isBarrack: 0
+  isFort: 1
   intoTheGround: 5
   unitLayerMask:
     serializedVersion: 2

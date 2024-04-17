@@ -129,7 +129,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5018073
+  m_Radius: 1.018073
   m_Height: 0.17186128
   m_Direction: 1
   m_Center: {x: -0.029478014, y: 0.033625968, z: -0.14103031}
@@ -143,7 +143,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.50200003, y: 0.086, z: 0.47000003}
+  m_Extents: {x: 0.752, y: 0.086, z: 0.47000003}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1

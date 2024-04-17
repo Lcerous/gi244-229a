@@ -11,6 +11,8 @@ public class FactionAI : MonoBehaviour
 
     [SerializeField] private Building curHQ;
     [SerializeField] private Building curBarrack;
+    [SerializeField] private Building curFort;
+
     [SerializeField] private Building curHunterLodge;
 
     [SerializeField] private GameObject unfinishedBuilding = null;
@@ -61,7 +63,7 @@ public class FactionAI : MonoBehaviour
         WorkerFindResource(ResourceType.Wood,2);
         WorkerFindResource(ResourceType.Food,1);
         WorkerFindResource(ResourceType.Stone,1);
-        WorkerFindResource(ResourceType.Gold, 1);
+        WorkerFindResource(ResourceType.Gold,1);
     }
     private void UpdateImportantBuilding()
     {
@@ -75,6 +77,9 @@ public class FactionAI : MonoBehaviour
 
             if (b.IsBarrack)
                 curBarrack = b;
+
+            if (b.IsFort)
+                curFort = b;
         }
     }
     private void WorkerFindResource(ResourceType rType, int n)
@@ -102,6 +107,6 @@ public class FactionAI : MonoBehaviour
             if (n == 0)
                 break;
         }
-    }
 
+    }
 }

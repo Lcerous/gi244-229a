@@ -33,6 +33,9 @@ public class Building : Structure
     [SerializeField] private bool isBarrack;
     public bool IsBarrack { get { return isBarrack; } }
 
+    [SerializeField] private bool isFort;
+    public bool IsFort { get { return isFort; } }
+
     [SerializeField] private float intoTheGround = 5f;
     public float IntoTheGround { get { return intoTheGround; } }
     

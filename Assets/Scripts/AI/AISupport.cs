@@ -22,6 +22,9 @@ public class AISupport : MonoBehaviour
     [SerializeField] private List<GameObject> barracks = new List<GameObject>();
     public List<GameObject> Barracks { get { return barracks; } }
 
+    [SerializeField] private List<GameObject> fort = new List<GameObject>();
+    public List<GameObject> Fort { get { return fort; } }
+
     [SerializeField] private Faction faction;
     public Faction Faction { get { return faction; } }
     // Start is called before the first frame update
@@ -59,6 +62,7 @@ public class AISupport : MonoBehaviour
         hq.Clear();
         houses.Clear();
         barracks.Clear();
+        fort.Clear();
         
         foreach (Building b in faction.AliveBuildings)
         {
@@ -73,6 +77,9 @@ public class AISupport : MonoBehaviour
 
             if (b.IsBarrack) 
                 barracks.Add(b.gameObject);
+
+            if (b.IsFort)
+                fort.Add(b.gameObject);
         }
     }
 }

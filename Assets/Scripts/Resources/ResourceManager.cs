@@ -11,6 +11,24 @@ public class ResourceManager : MonoBehaviour
     private Transform woodTreeParent;
 
     [SerializeField]
+    private GameObject[] foodTreePrefab;
+
+    [SerializeField]
+    private Transform foodTreeParent;
+
+    [SerializeField]
+    private GameObject[] stonePrefab;
+
+    [SerializeField]
+    private Transform stoneParent;
+
+    [SerializeField]
+    private GameObject[] foodPrefab;
+
+    [SerializeField]
+    private Transform foodParent;
+
+    [SerializeField]
     private ResourceSource[] resources;
     public ResourceSource[] Resources { get { return resources; } }
     public static ResourceManager instance;

@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4f833706281524aa2aa837c38b1e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rsrcName: Tree1
+  rsrcName: Tree
   rsrcPic: {fileID: 21300000, guid: a68bc4b60b7346f40aa55724885aea8e, type: 3}
   rsrcType: 1
   quantity: 100
