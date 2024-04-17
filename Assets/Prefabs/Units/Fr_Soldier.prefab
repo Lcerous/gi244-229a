@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 186328, guid: f32a41e2e70507f4c95b83e04a1a8bbd, type: 3}
       propertyPath: m_Name
-      value: French Soldier
+      value: Fr_Soldier
       objectReference: {fileID: 0}
     - target: {fileID: 427352, guid: f32a41e2e70507f4c95b83e04a1a8bbd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -65,8 +65,12 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2121215248786798260, guid: f32a41e2e70507f4c95b83e04a1a8bbd, type: 3}
+      propertyPath: unitPic
+      value: 
+      objectReference: {fileID: 21300000, guid: dc7443c9684a22a4fae7392d5330cb11, type: 3}
+    - target: {fileID: 2121215248786798260, guid: f32a41e2e70507f4c95b83e04a1a8bbd, type: 3}
       propertyPath: unitName
-      value: French. Regular
+      value: Fr_Soldier
       objectReference: {fileID: 0}
     - target: {fileID: 2121215248786798260, guid: f32a41e2e70507f4c95b83e04a1a8bbd, type: 3}
       propertyPath: maxWpnDamage

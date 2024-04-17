@@ -45,7 +45,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924654786812670}
-  m_Mesh: {fileID: 4300000, guid: a6af1d922fe8e34429ec8743fb1559fd, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 7ea337348330cc14fb7f84cc0b25555a, type: 3}
 --- !u!23 &23670228405445438
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fdf18c58b725a2f469593ece1786d307, type: 2}
+  - {fileID: 2100000, guid: a366bdc638fe7e54b84cefd5ce0be9cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rsrcName: Stone
-  rsrcPic: {fileID: 21300000, guid: 21d6c69d347066b4d8d93d3fea25f753, type: 3}
+  rsrcPic: {fileID: 21300000, guid: 22e961e4fefb35747b589cc126e6c982, type: 3}
   rsrcType: 3
   quantity: 100
   maxQuantity: 100

@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   structureName: House
-  structurePic: {fileID: 21300000, guid: b0a5ac6a0a194904caea029fcf0289c2, type: 3}
+  structurePic: {fileID: 21300000, guid: a94e545b55854cb4aa668aa451314f0b, type: 3}
   curHP: 1
   maxHP: 100
   faction: {fileID: 0}
