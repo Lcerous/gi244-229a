@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Setting : MonoBehaviour
+public static class Settings
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static string currentScene;
 
-    // Update is called once per frame
-    void Update()
+    public static Nation mySide;
+    public static Nation EnemySide;
+
+    public static void SelectSide(int side)
     {
-        
+        switch (side)
+        {
+            case 0:
+                mySide = Nation.Britain;
+                EnemySide = Nation.France;
+                break;
+            case 1:
+                mySide = Nation.France;
+                EnemySide = Nation.Britain;
+                break;
+        }
     }
 }

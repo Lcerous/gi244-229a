@@ -58,11 +58,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e1235b2e417983469723d36f05de88d, type: 2}
     - target: {fileID: 2121215248786798260, guid: f32a41e2e70507f4c95b83e04a1a8bbd, type: 3}
       propertyPath: curHP
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2121215248786798260, guid: f32a41e2e70507f4c95b83e04a1a8bbd, type: 3}
       propertyPath: maxHP
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2121215248786798260, guid: f32a41e2e70507f4c95b83e04a1a8bbd, type: 3}
       propertyPath: unitPic
@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2121215248786798260, guid: f32a41e2e70507f4c95b83e04a1a8bbd, type: 3}
       propertyPath: maxWpnDamage
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2121215248786798260, guid: f32a41e2e70507f4c95b83e04a1a8bbd, type: 3}
       propertyPath: minWpnDamage

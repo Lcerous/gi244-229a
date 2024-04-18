@@ -5263,11 +5263,11 @@ MonoBehaviour:
   id: 1
   unitName: Br_Soldier
   unitPic: {fileID: 21300000, guid: 75bd0a7b4c32b4447a30f9e31d89b99f, type: 3}
-  curHP: 10
-  maxHP: 10
+  curHP: 150
+  maxHP: 150
   moveSpeed: 5
   minWpnDamage: 1
-  maxWpnDamage: 1
+  maxWpnDamage: 10
   armour: 1
   visualRange: 20
   weaponRange: 15
