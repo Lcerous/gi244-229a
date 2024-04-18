@@ -260,12 +260,12 @@ public class Faction : MonoBehaviour
             case Nation.Spain:
                 col = Color.yellow;
                 break;
-            case Nation.Portugal:
+            /*case Nation.Portugal:
                 col = Color.green;
                 break;
             case Nation.Netherland:
                 col = new Color32(255, 157, 0, 255);
-                break;
+                break;*/
             default:
                 col = Color.white;
                 break;

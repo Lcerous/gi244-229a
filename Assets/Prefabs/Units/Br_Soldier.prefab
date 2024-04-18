@@ -5143,6 +5143,7 @@ GameObject:
   - component: {fileID: 2121215248786798260}
   - component: {fileID: 4017360819271192927}
   - component: {fileID: 7018844946156575562}
+  - component: {fileID: 2874227389577760310}
   m_Layer: 6
   m_Name: Br_Soldier
   m_TagString: Unit
@@ -5313,6 +5314,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f949f5d7ff21dc1459c010f711dfc769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2874227389577760310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c023854bbbb9ac40ab6f7b0900edf83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &186630
